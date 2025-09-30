@@ -2,6 +2,12 @@ params.SRR = "SRR1777174"
 params.out = "${projectDir}/output"
 params.store = "${projectDir}/downloads"
 params.storeDir = "${projectDir}/cache"
+params.run_fastqc = false
+
+if (!params.run_fastqc) {
+    log.warn "Conditional run: Please provide --run_fastqc true"
+    exit 0
+}
 
 process prefetch {
     storeDir params.storeDir
@@ -39,7 +45,32 @@ process ngsUtils {
 	"""
 }
 
-workflow {
-(prefetch | fastDump | ngsUtils)
-
+process FastQC {
+    storeDir params.storeDir
+	publishDir params.out, mode: 'copy', overwrite: true
+	container "https://depot.galaxyproject.org/singularity/fastqc%3A0.12.1--hdfd78af_0"
+	input:
+		path input
+	output:
+		path "${input.simpleName}_fastqc.zip"
+        path "${input.simpleName}_fastqc.html"
+    
+    when:
+        params.run_fastqc
+   
+    """
+    fastqc ${input}
+    """
 }
+
+
+workflow {
+c1 = (prefetch | fastDump) 
+quality = ngsUtils(c1)
+
+
+    if (params.run_fastqc) {
+        FastQCout = FastQC(c1)
+    } 
+}
+
