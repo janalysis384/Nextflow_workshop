@@ -221,5 +221,5 @@
 		"overrepresented_sequences": {
 		}
 	},
-	"command": "fastp --in1 SRR12426925.fastq --out1 SRR12426925_trimmed.fastq.gz --cut_window_size 4 --cut_mean_quality 20 --length_required 50 --average_qual 20 --html SRR12426925_fastp.html --json SRR12426925_fastp.json --thread 4 "
+	"command": "fastp --in1 SRR12426925.fastq --out1 SRR12426925_trimmed.fastq --cut_window_size 4 --cut_mean_quality 20 --length_required 50 --average_qual 20 --html SRR12426925_fastp.html --json SRR12426925_fastp.json --thread 4 "
 }

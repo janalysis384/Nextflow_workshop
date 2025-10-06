@@ -1,0 +1,154 @@
+- STAGE: Before start
+  args: []
+  config_dir: ''
+  del_after: []
+  job_uuid: SPAdes_Before_start_MQWHYZTAMK3RTYRJO02ELEPUHSTRQQFR
+  mpi_support: false
+  output_files: []
+  path: 'true'
+  short_name: before_start
+- STAGE: Read error correction
+  args: []
+  config_dir: ''
+  del_after: []
+  job_uuid: SPAdes_Read_error_correction_LR51E2YPGKZQSFPVVYL6YAOGF68BPP0Y
+  mpi_support: false
+  output_files: []
+  path: 'true'
+  short_name: ec_start
+- STAGE: Read error correction
+  args:
+  - /home/janina/nextflow/Nextflow_workshop/work/6c/c62005605f3952a703c9ce2695f87f/SRR12426925_trimmed/corrected/configs/config.info
+  config_dir: corrected
+  del_after:
+  - tmp/hammer_bd7iyvmw
+  job_uuid: SPAdes_Read_error_correction_D8PKSH3RFCIJ48GV5WKX3S4T3CM8WGPW
+  mpi_support: false
+  output_files:
+  - /home/janina/nextflow/Nextflow_workshop/work/6c/c62005605f3952a703c9ce2695f87f/SRR12426925_trimmed/corrected/corrected.yaml
+  path: /usr/local/bin/spades-hammer
+  short_name: ec_runtool
+- STAGE: corrected reads compression
+  args:
+  - /usr/local/share/spades/spades_pipeline/scripts/compress_all.py
+  - --input_file
+  - /home/janina/nextflow/Nextflow_workshop/work/6c/c62005605f3952a703c9ce2695f87f/SRR12426925_trimmed/corrected/corrected.yaml
+  - --ext_python_modules_home
+  - /usr/local/share/spades
+  - --max_threads
+  - '16'
+  - --output_dir
+  - /home/janina/nextflow/Nextflow_workshop/work/6c/c62005605f3952a703c9ce2695f87f/SRR12426925_trimmed/corrected
+  - --gzip_output
+  config_dir: ''
+  del_after: []
+  job_uuid: SPAdes_corrected_reads_compression_R8H4NMC8ZYMEH47BXG0XKNVLO9YKK17N
+  mpi_support: false
+  output_files: []
+  path: /usr/local/bin/python3
+  short_name: ec_compress
+- STAGE: Read error correction
+  args: []
+  config_dir: ''
+  del_after: []
+  job_uuid: SPAdes_Read_error_correction_MNFW8GYKSQODQBP0P21W4QFWV6044NAX
+  mpi_support: false
+  output_files: []
+  path: 'true'
+  short_name: ec_finish
+- STAGE: Assembling
+  args: []
+  config_dir: ''
+  del_after: []
+  job_uuid: SPAdes_Assembling_Q4NOJCGGPS9HSUUB7REF6OZS1VXCSOTS
+  mpi_support: false
+  output_files: []
+  path: 'true'
+  short_name: as_start
+- STAGE: K21
+  args:
+  - /home/janina/nextflow/Nextflow_workshop/work/6c/c62005605f3952a703c9ce2695f87f/SRR12426925_trimmed/K21/configs/config.info
+  config_dir: K21
+  del_after: []
+  job_uuid: hpcSPAdes_K21_WROS4VVNFEDX24ZOEWEUV71OTN89TWNL
+  mpi_support: true
+  output_files: []
+  path: /usr/local/bin/{spades_core}
+  short_name: k21
+- STAGE: K33
+  args:
+  - /home/janina/nextflow/Nextflow_workshop/work/6c/c62005605f3952a703c9ce2695f87f/SRR12426925_trimmed/K33/configs/config.info
+  config_dir: K33
+  del_after: []
+  job_uuid: hpcSPAdes_K33_7RYNH2ZKSHTQ2JD4YRF2HE4YQT8UYQD2
+  mpi_support: true
+  output_files: []
+  path: /usr/local/bin/{spades_core}
+  short_name: k33
+- STAGE: Copy files
+  args:
+  - /usr/local/share/spades/spades_pipeline/scripts/copy_files.py
+  - /home/janina/nextflow/Nextflow_workshop/work/6c/c62005605f3952a703c9ce2695f87f/SRR12426925_trimmed/K33/before_rr.fasta
+  - /home/janina/nextflow/Nextflow_workshop/work/6c/c62005605f3952a703c9ce2695f87f/SRR12426925_trimmed/before_rr.fasta
+  - /home/janina/nextflow/Nextflow_workshop/work/6c/c62005605f3952a703c9ce2695f87f/SRR12426925_trimmed/K33/assembly_graph_after_simplification.gfa
+  - /home/janina/nextflow/Nextflow_workshop/work/6c/c62005605f3952a703c9ce2695f87f/SRR12426925_trimmed/assembly_graph_after_simplification.gfa
+  - /home/janina/nextflow/Nextflow_workshop/work/6c/c62005605f3952a703c9ce2695f87f/SRR12426925_trimmed/K33/final_contigs.fasta
+  - /home/janina/nextflow/Nextflow_workshop/work/6c/c62005605f3952a703c9ce2695f87f/SRR12426925_trimmed/contigs.fasta
+  - /home/janina/nextflow/Nextflow_workshop/work/6c/c62005605f3952a703c9ce2695f87f/SRR12426925_trimmed/K33/first_pe_contigs.fasta
+  - /home/janina/nextflow/Nextflow_workshop/work/6c/c62005605f3952a703c9ce2695f87f/SRR12426925_trimmed/first_pe_contigs.fasta
+  - /home/janina/nextflow/Nextflow_workshop/work/6c/c62005605f3952a703c9ce2695f87f/SRR12426925_trimmed/K33/strain_graph.gfa
+  - /home/janina/nextflow/Nextflow_workshop/work/6c/c62005605f3952a703c9ce2695f87f/SRR12426925_trimmed/strain_graph.gfa
+  - /home/janina/nextflow/Nextflow_workshop/work/6c/c62005605f3952a703c9ce2695f87f/SRR12426925_trimmed/K33/scaffolds.fasta
+  - /home/janina/nextflow/Nextflow_workshop/work/6c/c62005605f3952a703c9ce2695f87f/SRR12426925_trimmed/scaffolds.fasta
+  - /home/janina/nextflow/Nextflow_workshop/work/6c/c62005605f3952a703c9ce2695f87f/SRR12426925_trimmed/K33/scaffolds.paths
+  - /home/janina/nextflow/Nextflow_workshop/work/6c/c62005605f3952a703c9ce2695f87f/SRR12426925_trimmed/scaffolds.paths
+  - /home/janina/nextflow/Nextflow_workshop/work/6c/c62005605f3952a703c9ce2695f87f/SRR12426925_trimmed/K33/assembly_graph_with_scaffolds.gfa
+  - /home/janina/nextflow/Nextflow_workshop/work/6c/c62005605f3952a703c9ce2695f87f/SRR12426925_trimmed/assembly_graph_with_scaffolds.gfa
+  - /home/janina/nextflow/Nextflow_workshop/work/6c/c62005605f3952a703c9ce2695f87f/SRR12426925_trimmed/K33/assembly_graph.fastg
+  - /home/janina/nextflow/Nextflow_workshop/work/6c/c62005605f3952a703c9ce2695f87f/SRR12426925_trimmed/assembly_graph.fastg
+  - /home/janina/nextflow/Nextflow_workshop/work/6c/c62005605f3952a703c9ce2695f87f/SRR12426925_trimmed/K33/final_contigs.paths
+  - /home/janina/nextflow/Nextflow_workshop/work/6c/c62005605f3952a703c9ce2695f87f/SRR12426925_trimmed/contigs.paths
+  config_dir: ''
+  del_after:
+  - .bin_reads
+  - tmp/spades_icxjpmu7
+  job_uuid: SPAdes_Copy_files_6L2L5IFVKYMTNZA5IHBYBUERXW69HR05
+  mpi_support: false
+  output_files: []
+  path: /usr/local/bin/python3
+  short_name: copy_files
+- STAGE: Assembling
+  args: []
+  config_dir: ''
+  del_after: []
+  job_uuid: SPAdes_Assembling_4VXMHHTG3TSOT7D9ZYHS2EM8LCRXSE7S
+  mpi_support: false
+  output_files: []
+  path: 'true'
+  short_name: as_finish
+- STAGE: Breaking scaffolds
+  args:
+  - /usr/local/share/spades/spades_pipeline/scripts/breaking_scaffolds_script.py
+  - --result_scaffolds_filename
+  - /home/janina/nextflow/Nextflow_workshop/work/6c/c62005605f3952a703c9ce2695f87f/SRR12426925_trimmed/scaffolds.fasta
+  - --misc_dir
+  - /home/janina/nextflow/Nextflow_workshop/work/6c/c62005605f3952a703c9ce2695f87f/SRR12426925_trimmed/misc
+  - --threshold_for_breaking_scaffolds
+  - '3'
+  config_dir: ''
+  del_after: []
+  job_uuid: SPAdes_Breaking_scaffolds_HGMNQX2SKNP4Y7CXK88FIECPSVVB472M
+  mpi_support: false
+  output_files: []
+  path: /usr/local/bin/python3
+  short_name: bs
+- STAGE: Terminate
+  args: []
+  config_dir: ''
+  del_after:
+  - configs
+  job_uuid: SPAdes_Terminate_F1RQR7RS9GESLVZSQE26EBUDMX6TBK2E
+  mpi_support: false
+  output_files: []
+  path: 'true'
+  short_name: terminate

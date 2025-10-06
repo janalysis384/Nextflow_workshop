@@ -7,7 +7,7 @@ params.run_fastqc = false
 params.cut_window_size  = 4
 params.cut_mean_quality = 20
 params.length_required  = 50
-params.average_qual     = 20
+params.average_qual     = 0
 
 /* if (!params.run_fastqc) {
     log.warn "Conditional run: Please provide --run_fastqc true"
@@ -63,7 +63,7 @@ process FastQC {
 		path input
 	output:
 		path "${input.simpleName}_fastqc.zip"
-        path "${input.simpleName}_fastqc.html"
+        /* path "${input.simpleName}_fastqc.html" */
     
     when:
         params.run_fastqc
@@ -74,8 +74,8 @@ process FastQC {
 }
 
 process FastP{
-	storeDir params.storeDir
-	publishDir params.out, mode: 'copy', overwrite: true
+	//storeDir params.storeDir
+	publishDir "${params.out}/fastp", mode: 'copy', overwrite: true
 	container "https://depot.galaxyproject.org/singularity/fastp%3A1.0.1--heae3180_0"
 	
     tag "${sample_id}"
@@ -84,27 +84,56 @@ process FastP{
     path read_file
 
     output:
-    path "${sample_id}_trimmed.fastq.gz"
-    path "${sample_id}_fastp.json"
-    path "${sample_id}_fastp.html"
+    path "${sample_id}_trimmed.fastq", emit: trimmed
+    path "${sample_id}_fastp.json", emit: json
+    path "${sample_id}_fastp.html", emit:html
 
     script:
-    sample_id = read_file.getBaseName().replaceFirst(/\.fastq(?:\.gz)?$/, '')
+    sample_id = read_file.getSimpleName()
 
     """
-    fastp \\
-        --in1 ${read_file} \\
-        --out1 ${sample_id}_trimmed.fastq.gz \\
-        --cut_window_size ${params.cut_window_size} \\
-        --cut_mean_quality ${params.cut_mean_quality} \\
-        --length_required ${params.length_required} \\
-        --average_qual ${params.average_qual} \\
-        --html ${sample_id}_fastp.html \\
-        --json ${sample_id}_fastp.json \\
-        --thread 4
+    fastp \
+        --in1 ${read_file} \
+        --out1 ${sample_id}_trimmed.fastq \
+        --html ${sample_id}_fastp.html \
+        --json ${sample_id}_fastp.json
     """
 }
+
+
+process MultiQC{
+	publishDir params.out, mode: 'copy', overwrite: true
+	container "https://depot.galaxyproject.org/singularity/multiqc%3A1.29--pyhdfd78af_0"
 	
+
+    input:
+    path read_file 
+
+    output:
+    path "${read_file}_multiqc_*"
+
+
+	"""
+	multiqc .
+	"""
+}
+
+
+process Spades{
+	publishDir params.out, mode: 'copy', overwrite: true
+	container "https://depot.galaxyproject.org/singularity/spades%3A4.2.0--h8d6e82b_2"
+	input:
+    path read_file 
+
+    output:
+    path "${read_file.getSimpleName()}"
+
+
+	"""
+	spades.py -s ${read_file} -o ${read_file.getSimpleName()}
+	"""
+
+}
 
 workflow {
 SRR = channel.fromPath(params.SRR).splitText().map{it -> it.trim()}
@@ -115,7 +144,10 @@ quality = ngsUtils(c1)
     if (params.run_fastqc) {
         FastQCout = FastQC(c1)
     }
+FastPout=FastP(c1) 
 
-FastP(c1) 
+//MultiQC(FastQCout.collect())
+
+Spades(FastPout.trimmed)
 }
 

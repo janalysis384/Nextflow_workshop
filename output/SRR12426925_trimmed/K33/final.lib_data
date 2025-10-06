@@ -1,0 +1,33 @@
+³---
+max read length: 36
+nomerge max read length: 36
+average read length: 34.7361
+average coverage: 310.953
+libraries:
+  - type:            single
+    number:          1
+    single reads:
+      - '/home/janina/nextflow/Nextflow_workshop/work/6c/c62005605f3952a703c9ce2695f87f/SRR12426925_trimmed/corrected/SRR12426925_trimmed00.0_0.cor.fastq.gz'
+    data:
+      unmerged read length: 36
+      merged read length: 0
+      insert size mean: 0
+      insert size deviation: 0
+      insert size left quantile: 0
+      insert size right quantile: 0
+      insert size median: 0
+      insert size mad: 0
+      insert size distribution: {  }
+      pi threshold:    0
+      binary reads info:
+        binary converted: true
+        bin reads info file: '/home/janina/nextflow/Nextflow_workshop/work/6c/c62005605f3952a703c9ce2695f87f/SRR12426925_trimmed/.bin_reads/INFO_0'
+        paired read prefix: '/home/janina/nextflow/Nextflow_workshop/work/6c/c62005605f3952a703c9ce2695f87f/SRR12426925_trimmed/.bin_reads/paired_0'
+        merged read prefix: '/home/janina/nextflow/Nextflow_workshop/work/6c/c62005605f3952a703c9ce2695f87f/SRR12426925_trimmed/.bin_reads/merged_0'
+        single read prefix: '/home/janina/nextflow/Nextflow_workshop/work/6c/c62005605f3952a703c9ce2695f87f/SRR12426925_trimmed/.bin_reads/single_0'
+        chunk num:       12
+      single reads mapped: true
+      library index:   0
+      number of reads: 40425
+      total nucleotides: 1404208
+...

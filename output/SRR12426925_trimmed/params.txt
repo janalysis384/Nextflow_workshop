@@ -1,0 +1,37 @@
+Command line: /usr/local/bin/spades.py	-s	/home/janina/nextflow/Nextflow_workshop/work/6c/c62005605f3952a703c9ce2695f87f/SRR12426925_trimmed.fastq	-o	/home/janina/nextflow/Nextflow_workshop/work/6c/c62005605f3952a703c9ce2695f87f/SRR12426925_trimmed	
+
+System information:
+  SPAdes version: 4.2.0
+  Python version: 3.13.7
+  OS: Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.36
+
+Output dir: /home/janina/nextflow/Nextflow_workshop/work/6c/c62005605f3952a703c9ce2695f87f/SRR12426925_trimmed
+Mode: read error correction and assembling
+Debug mode is turned OFF
+
+Dataset parameters:
+  Standard mode
+  For multi-cell/isolate data we recommend to use '--isolate' option; for single-cell MDA data use '--sc'; for metagenomic data use '--meta'; for RNA-Seq use '--rna'.
+  Reads:
+    Library number: 1, library type: single
+      left reads: not specified
+      right reads: not specified
+      interlaced reads: not specified
+      single reads: ['/home/janina/nextflow/Nextflow_workshop/work/6c/c62005605f3952a703c9ce2695f87f/SRR12426925_trimmed.fastq']
+      merged reads: not specified
+Read error correction parameters:
+  Iterations: 1
+  PHRED offset will be auto-detected
+  Corrected reads will be compressed
+Assembly parameters:
+  k: automatic selection based on read length
+  Repeat resolution is enabled
+  Mismatch careful mode is turned OFF
+  MismatchCorrector will be SKIPPED
+  Coverage cutoff is turned OFF
+  Assembly graph output will use GFA v1.2 format
+Other parameters:
+  Dir for temp files: /home/janina/nextflow/Nextflow_workshop/work/6c/c62005605f3952a703c9ce2695f87f/SRR12426925_trimmed/tmp
+  Threads: 16
+  Memory limit (in Gb): 23
+

@@ -1,0 +1,4 @@
+- "number": !!int "1"
+  "single reads":
+  - "/home/janina/nextflow/Nextflow_workshop/work/6c/c62005605f3952a703c9ce2695f87f/SRR12426925_trimmed/corrected/SRR12426925_trimmed00.0_0.cor.fastq.gz"
+  "type": "single"
