@@ -7,7 +7,7 @@ libraries:
   - type:            single
     number:          1
     single reads:
-      - '/home/janina/nextflow/Nextflow_workshop/work/1a/a8e4c81a25441d943a2d2bb583db5d/SRR1777174_trimmed/corrected/SRR1777174_trimmed00.0_0.cor.fastq.gz'
+      - '/home/janina/nextflow/Nextflow_workshop/work/3e/a766ba70626f274af04a7420005e33/SRR1777174_trimmed/corrected/SRR1777174_trimmed00.0_0.cor.fastq.gz'
     data:
       unmerged read length: 463
       merged read length: 0
@@ -21,10 +21,10 @@ libraries:
       pi threshold:    0
       binary reads info:
         binary converted: true
-        bin reads info file: '/home/janina/nextflow/Nextflow_workshop/work/1a/a8e4c81a25441d943a2d2bb583db5d/SRR1777174_trimmed/.bin_reads/INFO_0'
-        paired read prefix: '/home/janina/nextflow/Nextflow_workshop/work/1a/a8e4c81a25441d943a2d2bb583db5d/SRR1777174_trimmed/.bin_reads/paired_0'
-        merged read prefix: '/home/janina/nextflow/Nextflow_workshop/work/1a/a8e4c81a25441d943a2d2bb583db5d/SRR1777174_trimmed/.bin_reads/merged_0'
-        single read prefix: '/home/janina/nextflow/Nextflow_workshop/work/1a/a8e4c81a25441d943a2d2bb583db5d/SRR1777174_trimmed/.bin_reads/single_0'
+        bin reads info file: '/home/janina/nextflow/Nextflow_workshop/work/3e/a766ba70626f274af04a7420005e33/SRR1777174_trimmed/.bin_reads/INFO_0'
+        paired read prefix: '/home/janina/nextflow/Nextflow_workshop/work/3e/a766ba70626f274af04a7420005e33/SRR1777174_trimmed/.bin_reads/paired_0'
+        merged read prefix: '/home/janina/nextflow/Nextflow_workshop/work/3e/a766ba70626f274af04a7420005e33/SRR1777174_trimmed/.bin_reads/merged_0'
+        single read prefix: '/home/janina/nextflow/Nextflow_workshop/work/3e/a766ba70626f274af04a7420005e33/SRR1777174_trimmed/.bin_reads/single_0'
         chunk num:       12
       single reads mapped: false
       library index:   0

@@ -62,8 +62,8 @@ process FastQC {
 	input:
 		path input
 	output:
-		path "${input.simpleName}_fastqc.zip"
-        /* path "${input.simpleName}_fastqc.html" */
+		path "${input.simpleName}_fastqc.zip", emit: zip
+        path "${input.simpleName}_fastqc.html", emit: html 
     
     when:
         params.run_fastqc
@@ -86,7 +86,7 @@ process FastP{
     output:
     path "${sample_id}_trimmed.fastq", emit: trimmed
     path "${sample_id}_fastp.json", emit: json
-    path "${sample_id}_fastp.html", emit:html
+    path "${sample_id}_fastp.html", emit: html
 
     script:
     sample_id = read_file.getSimpleName()
@@ -110,11 +110,11 @@ process MultiQC{
     path read_file 
 
     output:
-    path "${read_file}_multiqc_*"
+    path "multiqc_*" /* it always generates this output */
 
 
 	"""
-	multiqc .
+	multiqc . 
 	"""
 }
 
@@ -126,11 +126,28 @@ process Spades{
     path read_file 
 
     output:
-    path "${read_file.getSimpleName()}"
+    path "${read_file.getSimpleName()}", emit: spades_dir
+	path "${read_file.getSimpleName()}_contigs.fasta", emit: spades_fasta
 
 
 	"""
 	spades.py -s ${read_file} -o ${read_file.getSimpleName()}
+	cp "${read_file.getSimpleName()}/contigs.fasta" "${read_file.getSimpleName()}_contigs.fasta"
+	"""
+
+}
+
+
+process quast {
+	publishDir params.out, mode: 'copy', overwrite: true
+	container "https://depot.galaxyproject.org/singularity/quast%3A5.3.0--py313pl5321h5ca1c30_2"
+	input:
+		path contigs
+	output:
+		path "${contigs.getSimpleName()}"
+	script:
+	"""
+	quast.py ${contigs} --min-contig 10 -o ${contigs.getSimpleName()}
 	"""
 
 }
@@ -146,8 +163,10 @@ quality = ngsUtils(c1)
     }
 FastPout=FastP(c1) 
 
-//MultiQC(FastQCout.collect())
+MultiQC(FastQCout.zip.collect())
 
-Spades(FastPout.trimmed)
+spadesout =Spades(FastPout.trimmed)
+
+quast(spadesout.spades_fasta)
 }
 

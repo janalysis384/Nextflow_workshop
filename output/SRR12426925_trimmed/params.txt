@@ -1,11 +1,11 @@
-Command line: /usr/local/bin/spades.py	-s	/home/janina/nextflow/Nextflow_workshop/work/6c/c62005605f3952a703c9ce2695f87f/SRR12426925_trimmed.fastq	-o	/home/janina/nextflow/Nextflow_workshop/work/6c/c62005605f3952a703c9ce2695f87f/SRR12426925_trimmed	
+Command line: /usr/local/bin/spades.py	-s	/home/janina/nextflow/Nextflow_workshop/work/c5/915ccc71ccec628dfd4e062a25b298/SRR12426925_trimmed.fastq	-o	/home/janina/nextflow/Nextflow_workshop/work/c5/915ccc71ccec628dfd4e062a25b298/SRR12426925_trimmed	
 
 System information:
   SPAdes version: 4.2.0
   Python version: 3.13.7
   OS: Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.36
 
-Output dir: /home/janina/nextflow/Nextflow_workshop/work/6c/c62005605f3952a703c9ce2695f87f/SRR12426925_trimmed
+Output dir: /home/janina/nextflow/Nextflow_workshop/work/c5/915ccc71ccec628dfd4e062a25b298/SRR12426925_trimmed
 Mode: read error correction and assembling
 Debug mode is turned OFF
 
@@ -17,7 +17,7 @@ Dataset parameters:
       left reads: not specified
       right reads: not specified
       interlaced reads: not specified
-      single reads: ['/home/janina/nextflow/Nextflow_workshop/work/6c/c62005605f3952a703c9ce2695f87f/SRR12426925_trimmed.fastq']
+      single reads: ['/home/janina/nextflow/Nextflow_workshop/work/c5/915ccc71ccec628dfd4e062a25b298/SRR12426925_trimmed.fastq']
       merged reads: not specified
 Read error correction parameters:
   Iterations: 1
@@ -31,7 +31,7 @@ Assembly parameters:
   Coverage cutoff is turned OFF
   Assembly graph output will use GFA v1.2 format
 Other parameters:
-  Dir for temp files: /home/janina/nextflow/Nextflow_workshop/work/6c/c62005605f3952a703c9ce2695f87f/SRR12426925_trimmed/tmp
+  Dir for temp files: /home/janina/nextflow/Nextflow_workshop/work/c5/915ccc71ccec628dfd4e062a25b298/SRR12426925_trimmed/tmp
   Threads: 16
   Memory limit (in Gb): 23
 

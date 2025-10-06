@@ -2,7 +2,7 @@
   args: []
   config_dir: ''
   del_after: []
-  job_uuid: SPAdes_Before_start_R0ZS9W2B3J2QBPG7Q5FWXPEWZ5J4TOQH
+  job_uuid: SPAdes_Before_start_GVBHFYU5Z88FPF3A7IW5YY3JWSAOZU4W
   mpi_support: false
   output_files: []
   path: 'true'
@@ -11,38 +11,38 @@
   args: []
   config_dir: ''
   del_after: []
-  job_uuid: SPAdes_Read_error_correction_MJEXHBCA25GTUB0MKGWXCSD8ED5ILHUN
+  job_uuid: SPAdes_Read_error_correction_HR5DBPGKIJ1PX6EDA6WJXND0NYOJAZU7
   mpi_support: false
   output_files: []
   path: 'true'
   short_name: ec_start
 - STAGE: Read error correction
   args:
-  - /home/janina/nextflow/Nextflow_workshop/work/82/d3a7e24bf40fc0d3dfeae40b0d3ae4/SRR12718173_trimmed/corrected/configs/config.info
+  - /home/janina/nextflow/Nextflow_workshop/work/9d/547a3b3326d47c89ae5b82255458c9/SRR12718173_trimmed/corrected/configs/config.info
   config_dir: corrected
   del_after:
-  - tmp/hammer_6oq93_qn
-  job_uuid: SPAdes_Read_error_correction_1IMKWD2NQK5VB551Z2U160JZE3QVQKCG
+  - tmp/hammer_5tu8c2_n
+  job_uuid: SPAdes_Read_error_correction_8WFSKNVAV7A9GM17APEPQBM2Z18VOQXM
   mpi_support: false
   output_files:
-  - /home/janina/nextflow/Nextflow_workshop/work/82/d3a7e24bf40fc0d3dfeae40b0d3ae4/SRR12718173_trimmed/corrected/corrected.yaml
+  - /home/janina/nextflow/Nextflow_workshop/work/9d/547a3b3326d47c89ae5b82255458c9/SRR12718173_trimmed/corrected/corrected.yaml
   path: /usr/local/bin/spades-hammer
   short_name: ec_runtool
 - STAGE: corrected reads compression
   args:
   - /usr/local/share/spades/spades_pipeline/scripts/compress_all.py
   - --input_file
-  - /home/janina/nextflow/Nextflow_workshop/work/82/d3a7e24bf40fc0d3dfeae40b0d3ae4/SRR12718173_trimmed/corrected/corrected.yaml
+  - /home/janina/nextflow/Nextflow_workshop/work/9d/547a3b3326d47c89ae5b82255458c9/SRR12718173_trimmed/corrected/corrected.yaml
   - --ext_python_modules_home
   - /usr/local/share/spades
   - --max_threads
   - '16'
   - --output_dir
-  - /home/janina/nextflow/Nextflow_workshop/work/82/d3a7e24bf40fc0d3dfeae40b0d3ae4/SRR12718173_trimmed/corrected
+  - /home/janina/nextflow/Nextflow_workshop/work/9d/547a3b3326d47c89ae5b82255458c9/SRR12718173_trimmed/corrected
   - --gzip_output
   config_dir: ''
   del_after: []
-  job_uuid: SPAdes_corrected_reads_compression_LY6EPKU21RIM1LAR2BINY5S7WBB6VUB9
+  job_uuid: SPAdes_corrected_reads_compression_YHPEZRLADY8IWHV2GS6W2STDJQ0WAXJO
   mpi_support: false
   output_files: []
   path: /usr/local/bin/python3
@@ -51,7 +51,7 @@
   args: []
   config_dir: ''
   del_after: []
-  job_uuid: SPAdes_Read_error_correction_ADXRH78FSCRAH52YFMIHL14Z03I4RJAO
+  job_uuid: SPAdes_Read_error_correction_24MVPGW5TTGWJ3VCD1C7SVB2L3AF1OKX
   mpi_support: false
   output_files: []
   path: 'true'
@@ -60,27 +60,27 @@
   args: []
   config_dir: ''
   del_after: []
-  job_uuid: SPAdes_Assembling_7G1J4J65Q6ODYA4FZPYC240FH3W15L9B
+  job_uuid: SPAdes_Assembling_FMSG77KW62V6TJ07Z1M87EBRGP9HORS7
   mpi_support: false
   output_files: []
   path: 'true'
   short_name: as_start
 - STAGE: K21
   args:
-  - /home/janina/nextflow/Nextflow_workshop/work/82/d3a7e24bf40fc0d3dfeae40b0d3ae4/SRR12718173_trimmed/K21/configs/config.info
+  - /home/janina/nextflow/Nextflow_workshop/work/9d/547a3b3326d47c89ae5b82255458c9/SRR12718173_trimmed/K21/configs/config.info
   config_dir: K21
   del_after: []
-  job_uuid: hpcSPAdes_K21_YM4EPPWIG5MZMS79IOOIWLNHMZLNXFQ0
+  job_uuid: hpcSPAdes_K21_17D70LQ2H3S13FVQ895XZU6J3XOOKUGP
   mpi_support: true
   output_files: []
   path: /usr/local/bin/{spades_core}
   short_name: k21
 - STAGE: K33
   args:
-  - /home/janina/nextflow/Nextflow_workshop/work/82/d3a7e24bf40fc0d3dfeae40b0d3ae4/SRR12718173_trimmed/K33/configs/config.info
+  - /home/janina/nextflow/Nextflow_workshop/work/9d/547a3b3326d47c89ae5b82255458c9/SRR12718173_trimmed/K33/configs/config.info
   config_dir: K33
   del_after: []
-  job_uuid: hpcSPAdes_K33_LMWOKPKRV9AHAV36XJMJJ635LVGIRP1H
+  job_uuid: hpcSPAdes_K33_AWI9OWG47SMS8XIG4LB32OE5616HHPK5
   mpi_support: true
   output_files: []
   path: /usr/local/bin/{spades_core}
@@ -88,31 +88,31 @@
 - STAGE: Copy files
   args:
   - /usr/local/share/spades/spades_pipeline/scripts/copy_files.py
-  - /home/janina/nextflow/Nextflow_workshop/work/82/d3a7e24bf40fc0d3dfeae40b0d3ae4/SRR12718173_trimmed/K33/before_rr.fasta
-  - /home/janina/nextflow/Nextflow_workshop/work/82/d3a7e24bf40fc0d3dfeae40b0d3ae4/SRR12718173_trimmed/before_rr.fasta
-  - /home/janina/nextflow/Nextflow_workshop/work/82/d3a7e24bf40fc0d3dfeae40b0d3ae4/SRR12718173_trimmed/K33/assembly_graph_after_simplification.gfa
-  - /home/janina/nextflow/Nextflow_workshop/work/82/d3a7e24bf40fc0d3dfeae40b0d3ae4/SRR12718173_trimmed/assembly_graph_after_simplification.gfa
-  - /home/janina/nextflow/Nextflow_workshop/work/82/d3a7e24bf40fc0d3dfeae40b0d3ae4/SRR12718173_trimmed/K33/final_contigs.fasta
-  - /home/janina/nextflow/Nextflow_workshop/work/82/d3a7e24bf40fc0d3dfeae40b0d3ae4/SRR12718173_trimmed/contigs.fasta
-  - /home/janina/nextflow/Nextflow_workshop/work/82/d3a7e24bf40fc0d3dfeae40b0d3ae4/SRR12718173_trimmed/K33/first_pe_contigs.fasta
-  - /home/janina/nextflow/Nextflow_workshop/work/82/d3a7e24bf40fc0d3dfeae40b0d3ae4/SRR12718173_trimmed/first_pe_contigs.fasta
-  - /home/janina/nextflow/Nextflow_workshop/work/82/d3a7e24bf40fc0d3dfeae40b0d3ae4/SRR12718173_trimmed/K33/strain_graph.gfa
-  - /home/janina/nextflow/Nextflow_workshop/work/82/d3a7e24bf40fc0d3dfeae40b0d3ae4/SRR12718173_trimmed/strain_graph.gfa
-  - /home/janina/nextflow/Nextflow_workshop/work/82/d3a7e24bf40fc0d3dfeae40b0d3ae4/SRR12718173_trimmed/K33/scaffolds.fasta
-  - /home/janina/nextflow/Nextflow_workshop/work/82/d3a7e24bf40fc0d3dfeae40b0d3ae4/SRR12718173_trimmed/scaffolds.fasta
-  - /home/janina/nextflow/Nextflow_workshop/work/82/d3a7e24bf40fc0d3dfeae40b0d3ae4/SRR12718173_trimmed/K33/scaffolds.paths
-  - /home/janina/nextflow/Nextflow_workshop/work/82/d3a7e24bf40fc0d3dfeae40b0d3ae4/SRR12718173_trimmed/scaffolds.paths
-  - /home/janina/nextflow/Nextflow_workshop/work/82/d3a7e24bf40fc0d3dfeae40b0d3ae4/SRR12718173_trimmed/K33/assembly_graph_with_scaffolds.gfa
-  - /home/janina/nextflow/Nextflow_workshop/work/82/d3a7e24bf40fc0d3dfeae40b0d3ae4/SRR12718173_trimmed/assembly_graph_with_scaffolds.gfa
-  - /home/janina/nextflow/Nextflow_workshop/work/82/d3a7e24bf40fc0d3dfeae40b0d3ae4/SRR12718173_trimmed/K33/assembly_graph.fastg
-  - /home/janina/nextflow/Nextflow_workshop/work/82/d3a7e24bf40fc0d3dfeae40b0d3ae4/SRR12718173_trimmed/assembly_graph.fastg
-  - /home/janina/nextflow/Nextflow_workshop/work/82/d3a7e24bf40fc0d3dfeae40b0d3ae4/SRR12718173_trimmed/K33/final_contigs.paths
-  - /home/janina/nextflow/Nextflow_workshop/work/82/d3a7e24bf40fc0d3dfeae40b0d3ae4/SRR12718173_trimmed/contigs.paths
+  - /home/janina/nextflow/Nextflow_workshop/work/9d/547a3b3326d47c89ae5b82255458c9/SRR12718173_trimmed/K33/before_rr.fasta
+  - /home/janina/nextflow/Nextflow_workshop/work/9d/547a3b3326d47c89ae5b82255458c9/SRR12718173_trimmed/before_rr.fasta
+  - /home/janina/nextflow/Nextflow_workshop/work/9d/547a3b3326d47c89ae5b82255458c9/SRR12718173_trimmed/K33/assembly_graph_after_simplification.gfa
+  - /home/janina/nextflow/Nextflow_workshop/work/9d/547a3b3326d47c89ae5b82255458c9/SRR12718173_trimmed/assembly_graph_after_simplification.gfa
+  - /home/janina/nextflow/Nextflow_workshop/work/9d/547a3b3326d47c89ae5b82255458c9/SRR12718173_trimmed/K33/final_contigs.fasta
+  - /home/janina/nextflow/Nextflow_workshop/work/9d/547a3b3326d47c89ae5b82255458c9/SRR12718173_trimmed/contigs.fasta
+  - /home/janina/nextflow/Nextflow_workshop/work/9d/547a3b3326d47c89ae5b82255458c9/SRR12718173_trimmed/K33/first_pe_contigs.fasta
+  - /home/janina/nextflow/Nextflow_workshop/work/9d/547a3b3326d47c89ae5b82255458c9/SRR12718173_trimmed/first_pe_contigs.fasta
+  - /home/janina/nextflow/Nextflow_workshop/work/9d/547a3b3326d47c89ae5b82255458c9/SRR12718173_trimmed/K33/strain_graph.gfa
+  - /home/janina/nextflow/Nextflow_workshop/work/9d/547a3b3326d47c89ae5b82255458c9/SRR12718173_trimmed/strain_graph.gfa
+  - /home/janina/nextflow/Nextflow_workshop/work/9d/547a3b3326d47c89ae5b82255458c9/SRR12718173_trimmed/K33/scaffolds.fasta
+  - /home/janina/nextflow/Nextflow_workshop/work/9d/547a3b3326d47c89ae5b82255458c9/SRR12718173_trimmed/scaffolds.fasta
+  - /home/janina/nextflow/Nextflow_workshop/work/9d/547a3b3326d47c89ae5b82255458c9/SRR12718173_trimmed/K33/scaffolds.paths
+  - /home/janina/nextflow/Nextflow_workshop/work/9d/547a3b3326d47c89ae5b82255458c9/SRR12718173_trimmed/scaffolds.paths
+  - /home/janina/nextflow/Nextflow_workshop/work/9d/547a3b3326d47c89ae5b82255458c9/SRR12718173_trimmed/K33/assembly_graph_with_scaffolds.gfa
+  - /home/janina/nextflow/Nextflow_workshop/work/9d/547a3b3326d47c89ae5b82255458c9/SRR12718173_trimmed/assembly_graph_with_scaffolds.gfa
+  - /home/janina/nextflow/Nextflow_workshop/work/9d/547a3b3326d47c89ae5b82255458c9/SRR12718173_trimmed/K33/assembly_graph.fastg
+  - /home/janina/nextflow/Nextflow_workshop/work/9d/547a3b3326d47c89ae5b82255458c9/SRR12718173_trimmed/assembly_graph.fastg
+  - /home/janina/nextflow/Nextflow_workshop/work/9d/547a3b3326d47c89ae5b82255458c9/SRR12718173_trimmed/K33/final_contigs.paths
+  - /home/janina/nextflow/Nextflow_workshop/work/9d/547a3b3326d47c89ae5b82255458c9/SRR12718173_trimmed/contigs.paths
   config_dir: ''
   del_after:
   - .bin_reads
-  - tmp/spades_m_7da91k
-  job_uuid: SPAdes_Copy_files_OE22TRIPZCE6E01VE8C9VVZQ187PMXUL
+  - tmp/spades__kumnp9y
+  job_uuid: SPAdes_Copy_files_WCM2HOPSRN5IW664BXNPPZ42U9RVYC5J
   mpi_support: false
   output_files: []
   path: /usr/local/bin/python3
@@ -121,7 +121,7 @@
   args: []
   config_dir: ''
   del_after: []
-  job_uuid: SPAdes_Assembling_8267Q0X345TP7D5N5PTXOTD7I5EGKYFH
+  job_uuid: SPAdes_Assembling_V3FKNQVT1M675TACRXOJU0TBNE4M9GL3
   mpi_support: false
   output_files: []
   path: 'true'
@@ -130,14 +130,14 @@
   args:
   - /usr/local/share/spades/spades_pipeline/scripts/breaking_scaffolds_script.py
   - --result_scaffolds_filename
-  - /home/janina/nextflow/Nextflow_workshop/work/82/d3a7e24bf40fc0d3dfeae40b0d3ae4/SRR12718173_trimmed/scaffolds.fasta
+  - /home/janina/nextflow/Nextflow_workshop/work/9d/547a3b3326d47c89ae5b82255458c9/SRR12718173_trimmed/scaffolds.fasta
   - --misc_dir
-  - /home/janina/nextflow/Nextflow_workshop/work/82/d3a7e24bf40fc0d3dfeae40b0d3ae4/SRR12718173_trimmed/misc
+  - /home/janina/nextflow/Nextflow_workshop/work/9d/547a3b3326d47c89ae5b82255458c9/SRR12718173_trimmed/misc
   - --threshold_for_breaking_scaffolds
   - '3'
   config_dir: ''
   del_after: []
-  job_uuid: SPAdes_Breaking_scaffolds_48KPJNX24QEIEO5AW9CWZIE6K5ZZ9B90
+  job_uuid: SPAdes_Breaking_scaffolds_94HM5GIQP6W1OU97BCSMGG7GFCDVBGC9
   mpi_support: false
   output_files: []
   path: /usr/local/bin/python3
@@ -147,7 +147,7 @@
   config_dir: ''
   del_after:
   - configs
-  job_uuid: SPAdes_Terminate_HUCTVG1MC3U7NQE23JO6H6NDVQLDAZ99
+  job_uuid: SPAdes_Terminate_7JRF0Y5ZPLOAU15GTEXQ0D0ZASI3VV4V
   mpi_support: false
   output_files: []
   path: 'true'

@@ -1,4 +1,4 @@
 
 === Error correction and assembling warnings:
- * 0:00:00.481     1M / 27M   WARN    General                 (kmer_coverage_model.cpp   : 219)   Too many erroneous kmers, the estimates might be unreliable
-======= Warnings saved to /home/janina/nextflow/Nextflow_workshop/work/6c/c62005605f3952a703c9ce2695f87f/SRR12426925_trimmed/warnings.log
+ * 0:00:00.620     1M / 27M   WARN    General                 (kmer_coverage_model.cpp   : 219)   Too many erroneous kmers, the estimates might be unreliable
+======= Warnings saved to /home/janina/nextflow/Nextflow_workshop/work/c5/915ccc71ccec628dfd4e062a25b298/SRR12426925_trimmed/warnings.log

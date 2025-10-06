@@ -10,17 +10,17 @@ K 33
 ;FIXME introduce isolate mode
 mode base
 
-dataset /home/janina/nextflow/Nextflow_workshop/work/1a/a8e4c81a25441d943a2d2bb583db5d/SRR1777174_trimmed/dataset.info
+dataset /home/janina/nextflow/Nextflow_workshop/work/3e/a766ba70626f274af04a7420005e33/SRR1777174_trimmed/dataset.info
 log_filename    log.properties
 
-output_base /home/janina/nextflow/Nextflow_workshop/work/1a/a8e4c81a25441d943a2d2bb583db5d/SRR1777174_trimmed
-tmp_dir /home/janina/nextflow/Nextflow_workshop/work/1a/a8e4c81a25441d943a2d2bb583db5d/SRR1777174_trimmed/tmp/spades_hf1ielcw
+output_base /home/janina/nextflow/Nextflow_workshop/work/3e/a766ba70626f274af04a7420005e33/SRR1777174_trimmed
+tmp_dir /home/janina/nextflow/Nextflow_workshop/work/3e/a766ba70626f274af04a7420005e33/SRR1777174_trimmed/tmp/spades_y590b31d
 
 main_iteration false
 ; iterative mode switcher, activates additional contigs usage
 use_additional_contigs true
-additional_contigs /home/janina/nextflow/Nextflow_workshop/work/1a/a8e4c81a25441d943a2d2bb583db5d/SRR1777174_trimmed/K21/simplified_contigs
-load_from /home/janina/nextflow/Nextflow_workshop/work/1a/a8e4c81a25441d943a2d2bb583db5d/SRR1777174_trimmed/K33/saves
+additional_contigs /home/janina/nextflow/Nextflow_workshop/work/3e/a766ba70626f274af04a7420005e33/SRR1777174_trimmed/K21/simplified_contigs
+load_from /home/janina/nextflow/Nextflow_workshop/work/3e/a766ba70626f274af04a7420005e33/SRR1777174_trimmed/K33/saves
 
 ; Multithreading options
 temp_bin_reads_dir	.bin_reads/

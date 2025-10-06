@@ -1,0 +1,4 @@
+Module	Section	Sample Name	Source
+FastQC	all_sections	SRR1777174	/home/janina/nextflow/Nextflow_workshop/work/31/8dfd37c030c4afff4af89e387b43cb/SRR1777174_fastqc.zip
+FastQC	all_sections	SRR12426925	/home/janina/nextflow/Nextflow_workshop/work/31/8dfd37c030c4afff4af89e387b43cb/SRR12426925_fastqc.zip
+FastQC	all_sections	SRR12718173	/home/janina/nextflow/Nextflow_workshop/work/31/8dfd37c030c4afff4af89e387b43cb/SRR12718173_fastqc.zip

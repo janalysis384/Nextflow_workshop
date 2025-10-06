@@ -1,0 +1,66 @@
+/usr/local/bin/quast.py SRR12718173_trimmed_contigs.fasta --min-contig 10 -o SRR12718173_trimmed_contigs
+
+Version: 5.3.0
+
+System information:
+  OS: Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.36 (linux_64)
+  Python version: 3.13.1
+  CPUs number: 12
+
+Started: 2025-10-06 15:10:34
+
+Logging to /home/janina/nextflow/Nextflow_workshop/work/fa/4b0e244152c5a2308432cbd7e62127/SRR12718173_trimmed_contigs/quast.log
+NOTICE: Maximum number of threads is set to 3 (use --threads option to set it manually)
+
+CWD: /home/janina/nextflow/Nextflow_workshop/work/fa/4b0e244152c5a2308432cbd7e62127
+Main parameters: 
+  MODE: default, threads: 3, min contig length: 10, min alignment length: 65, min alignment IDY: 95.0, \
+  ambiguity: one, min local misassembly length: 200, min extensive misassembly length: 1000
+
+Contigs:
+  Pre-processing...
+  SRR12718173_trimmed_contigs.fasta ==> SRR12718173_trimmed_contigs
+
+2025-10-06 15:10:36
+Running Basic statistics processor...
+  Contig files: 
+    SRR12718173_trimmed_contigs
+  Calculating N50 and L50...
+    SRR12718173_trimmed_contigs, N50 = 735, L50 = 3, auN = 562.2, Total length = 4179, GC % = 56.04, # N's per 100 kbp =  0.00
+  Drawing Nx plot...
+    saved to /home/janina/nextflow/Nextflow_workshop/work/fa/4b0e244152c5a2308432cbd7e62127/SRR12718173_trimmed_contigs/basic_stats/Nx_plot.pdf
+  Drawing cumulative plot...
+    saved to /home/janina/nextflow/Nextflow_workshop/work/fa/4b0e244152c5a2308432cbd7e62127/SRR12718173_trimmed_contigs/basic_stats/cumulative_plot.pdf
+  Drawing GC content plot...
+    saved to /home/janina/nextflow/Nextflow_workshop/work/fa/4b0e244152c5a2308432cbd7e62127/SRR12718173_trimmed_contigs/basic_stats/GC_content_plot.pdf
+  Drawing SRR12718173_trimmed_contigs GC content plot...
+    saved to /home/janina/nextflow/Nextflow_workshop/work/fa/4b0e244152c5a2308432cbd7e62127/SRR12718173_trimmed_contigs/basic_stats/SRR12718173_trimmed_contigs_GC_content_plot.pdf
+  Drawing Coverage histogram (bin size: 11x)...
+    saved to /home/janina/nextflow/Nextflow_workshop/work/fa/4b0e244152c5a2308432cbd7e62127/SRR12718173_trimmed_contigs/basic_stats/coverage_histogram.pdf
+  Drawing SRR12718173_trimmed_contigs coverage histogram (bin size: 11x)...
+    saved to /home/janina/nextflow/Nextflow_workshop/work/fa/4b0e244152c5a2308432cbd7e62127/SRR12718173_trimmed_contigs/basic_stats/SRR12718173_trimmed_contigs_coverage_histogram.pdf
+Done.
+
+NOTICE: Genes are not predicted by default. Use --gene-finding or --glimmer option to enable it.
+
+2025-10-06 15:10:37
+Creating large visual summaries...
+This may take a while: press Ctrl-C to skip this step..
+  1 of 2: Creating PDF with all tables and plots...
+  2 of 2: Creating Icarus viewers...
+Done
+
+2025-10-06 15:10:38
+RESULTS:
+  Text versions of total report are saved to /home/janina/nextflow/Nextflow_workshop/work/fa/4b0e244152c5a2308432cbd7e62127/SRR12718173_trimmed_contigs/report.txt, report.tsv, and report.tex
+  Text versions of transposed total report are saved to /home/janina/nextflow/Nextflow_workshop/work/fa/4b0e244152c5a2308432cbd7e62127/SRR12718173_trimmed_contigs/transposed_report.txt, transposed_report.tsv, and transposed_report.tex
+  HTML version (interactive tables and plots) is saved to /home/janina/nextflow/Nextflow_workshop/work/fa/4b0e244152c5a2308432cbd7e62127/SRR12718173_trimmed_contigs/report.html
+  PDF version (tables and plots) is saved to /home/janina/nextflow/Nextflow_workshop/work/fa/4b0e244152c5a2308432cbd7e62127/SRR12718173_trimmed_contigs/report.pdf
+  Icarus (contig browser) is saved to /home/janina/nextflow/Nextflow_workshop/work/fa/4b0e244152c5a2308432cbd7e62127/SRR12718173_trimmed_contigs/icarus.html
+  Log is saved to /home/janina/nextflow/Nextflow_workshop/work/fa/4b0e244152c5a2308432cbd7e62127/SRR12718173_trimmed_contigs/quast.log
+
+Finished: 2025-10-06 15:10:38
+Elapsed time: 0:00:04.158511
+NOTICEs: 2; WARNINGs: 0; non-fatal ERRORs: 0
+
+Thank you for using QUAST!

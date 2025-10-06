@@ -1,10 +1,10 @@
 ; = HAMMER =
 ; input options: working dir, input files, offset, and possibly kmers
-dataset /home/janina/nextflow/Nextflow_workshop/work/1a/a8e4c81a25441d943a2d2bb583db5d/SRR1777174_trimmed/input_dataset.yaml
-input_working_dir /home/janina/nextflow/Nextflow_workshop/work/1a/a8e4c81a25441d943a2d2bb583db5d/SRR1777174_trimmed/tmp/hammer_clzg2b0j
+dataset /home/janina/nextflow/Nextflow_workshop/work/3e/a766ba70626f274af04a7420005e33/SRR1777174_trimmed/input_dataset.yaml
+input_working_dir /home/janina/nextflow/Nextflow_workshop/work/3e/a766ba70626f274af04a7420005e33/SRR1777174_trimmed/tmp/hammer_b578k4cz
 input_trim_quality			4
 input_qvoffset				
-output_dir /home/janina/nextflow/Nextflow_workshop/work/1a/a8e4c81a25441d943a2d2bb583db5d/SRR1777174_trimmed/corrected
+output_dir /home/janina/nextflow/Nextflow_workshop/work/3e/a766ba70626f274af04a7420005e33/SRR1777174_trimmed/corrected
 
 ; == HAMMER GENERAL ==
 ; general options
